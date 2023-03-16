@@ -7,7 +7,7 @@
                 <h2>Laravel 8 CRUD with Image Upload Example from scratch - ItSolutionStuff.com</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('superadmins.create') }}"> Create New Product</a>
+                <a class="btn btn-success" href="{{ route('superadmins.create') }}"> Create New SuperAdmin</a>
             </div>
         </div>
     </div>
