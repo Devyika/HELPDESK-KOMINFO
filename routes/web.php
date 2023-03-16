@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PendaftaranController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\SuperadminController;
 use App\Http\Controllers\OpdController;
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +20,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::resource('pendaftarans', PendaftaranController::class);
+Route::resource('admins', AdminController::class);
+Route::resource('superadmins', SuperadminController::class);
 Route::resource('opds', OpdController::class);
