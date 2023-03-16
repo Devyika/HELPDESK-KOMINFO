@@ -1,13 +1,13 @@
-@extends('admins.layout')
+@extends('superadmins.layout')
    
 @section('content')
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2> Show Admin</h2>
+                <h2> Show SuperAdmin</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('admins.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('superadmins.index') }}"> Back</a>
             </div>
         </div>
     </div>
@@ -16,13 +16,13 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Username:</strong>
-                {{ $admin->username }}
+                {{ $superadmin->username }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Password:</strong>
-                {{ $admin->password }}
+                {{ $superadmin->password }}
             </div>
         </div>
     </div>
