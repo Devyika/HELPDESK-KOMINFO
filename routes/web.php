@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PendaftaranController;
+use App\Http\Controllers\AdminController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,3 +19,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::resource('pendaftarans', PendaftaranController::class);
+ 
+Route::resource('admins', AdminController::class);
