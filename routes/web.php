@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PendaftaranController;
+use App\Http\Controllers\OpdController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,3 +18,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::resource('pendaftarans', PendaftaranController::class);
+Route::resource('opds', OpdController::class);
