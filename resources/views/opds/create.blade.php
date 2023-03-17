@@ -4,10 +4,10 @@
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2>Add New Opd</h2>
+            <h2>Tambah Data OPD</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('opds.index') }}"> Back</a>
+            <a class="btn btn-primary" href="{{ route('opds.index') }}"> Kembali</a>
         </div>
     </div>
 </div>
@@ -36,7 +36,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Password:</strong>
-                <textarea class="form-control" style="height:150px" name="password" placeholder="Password"></textarea>
+                <input type="text" name="password" class="form-control" placeholder="Password"><br>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">

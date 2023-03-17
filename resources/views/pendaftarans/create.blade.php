@@ -7,7 +7,7 @@
             <h2>Pendaftaran Website OPD</h2>
         </div>
         <div class="float-end">
-            <a class="btn btn-primary" href="{{ route('pendaftarans.index') }}"> Back</a>
+            <a class="btn btn-primary" href="{{ route('pendaftarans.index') }}"> Kembali</a>
         </div>
     </div>
 </div>

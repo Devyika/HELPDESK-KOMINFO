@@ -31,7 +31,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Username:</strong>
-                    <input type="text" name="username" value="{{ $opd->name }}" class="form-control" placeholder="Username"
+                    <input type="text" name="username" value="{{ $opd->username }}" class="form-control" placeholder="Username">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
@@ -43,7 +43,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Asal Instansi:</strong>
-                    <input type="text" name="asal" value="{{ $opd->asal }}" class="form-control" placeholder="Asal Instansi"
+                    <input type="text" name="asal" value="{{ $opd->asal }}" class="form-control" placeholder="Asal Instansi">
                 </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
               <button type="submit" class="btn btn-primary">Submit</button>

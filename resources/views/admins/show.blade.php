@@ -1,13 +1,13 @@
 @extends('admins.layout')
    
 @section('content')
-    <div class="row">
+    <div class="row mt-5 mb-5">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2> Show Admin</h2>
+                <h2> Tampilan Data Admin</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('admins.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('admins.index') }}"> Kembali</a>
             </div>
         </div>
     </div>

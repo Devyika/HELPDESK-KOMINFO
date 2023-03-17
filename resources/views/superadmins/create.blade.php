@@ -1,13 +1,13 @@
 @extends('superadmins.layout')
   
 @section('content')
-<div class="row">
+<div class="row mt-5 mb-5">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2>Add New SuperAdmin</h2>
+            <h2>Tambah Data SuperAdmin</h2>
         </div>
-        <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('superadmins.index') }}"> Back</a>
+        <div class="float-end">
+            <a class="btn btn-primary" href="{{ route('superadmins.index') }}"> Kembali</a>
         </div>
     </div>
 </div>
@@ -36,7 +36,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Password:</strong>
-                <textarea class="form-control" style="height:150px" name="password" placeholder="password"></textarea>
+                <input type="text" name="password" class="form-control" placeholder="Password"><br>
             </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                 <button type="submit" class="btn btn-primary">Submit</button>

@@ -1,13 +1,13 @@
 @extends('superadmins.layout')
      
 @section('content')
-    <div class="row">
+    <div class="row mt-5 mb-5">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
                 <h2>Edit SuperAdmin</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('superadmins.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('superadmins.index') }}"> Kembali</a>
             </div>
         </div>
     </div>

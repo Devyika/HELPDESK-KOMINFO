@@ -4,10 +4,10 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2> Show Opd</h2>
+                <h2> Tampilan Opd</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('opds.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('opds.index') }}"> Kembali</a>
             </div>
         </div>
     </div>
