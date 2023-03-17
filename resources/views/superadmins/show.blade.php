@@ -4,10 +4,10 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2> Show SuperAdmin</h2>
+                <h2> Tampilan Data SuperAdmin</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('superadmins.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('superadmins.index') }}"> Kembali</a>
             </div>
         </div>
     </div>
