@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\SuperadminController;
 use App\Http\Controllers\OpdController;
 use App\Http\Controllers\Dashboard1Controller;
+use App\Http\Controllers\Dashboard2Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,4 @@ Route::resource('admins', AdminController::class);
 Route::resource('superadmins', SuperadminController::class);
 Route::resource('opds', OpdController::class);
 Route::resource('dashboard1', Dashboard1Controller::class);
+Route::resource('dashboard2', Dashboard2Controller::class);

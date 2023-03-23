@@ -9,7 +9,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>Halaman Superadmin</title>
+  <title>Halaman Admin</title>
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="{{ asset('lte/plugins/fontawesome-free/css/all.min.css') }}">
@@ -22,11 +22,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <div class="wrapper">
 
   <!-- Navbar -->
-  @include('dashboard1/header')
+  @include('dashboard2/header')
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  @include('dashboard1/sidebar')
+  @include('dashboard2/sidebar')
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -35,7 +35,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Selamat datang SuperAdmin</h1>
+            <h1 class="m-0 text-dark">Selamat datang Admin</h1>
           </div><!-- /.col -->
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -55,7 +55,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- /.content-wrapper -->
 
   <!-- Main Footer -->
-  @include('dashboard1/footer')
+  @include('dashboard2/footer')
 </div>
 <!-- ./wrapper -->
 

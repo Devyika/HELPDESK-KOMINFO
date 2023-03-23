@@ -8,7 +8,7 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="info">
-          <a href="#" class="d-block">SuperAdmin</a>
+          <a href="#" class="d-block">Admin</a>
         </div>
       </div>
 
@@ -27,12 +27,6 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ route('superadmins.index') }}" class="nav-link">
-                  <i class="nav-icon fas fa-book"></i>
-                  <p>Data SuperAdmin</p>
-                </a>
-              </li>
-              <li class="nav-item">
                 <a href="{{ route('admins.index') }}" class="nav-link">
                   <i class="nav-icon fas fa-book"></i>
                   <p>Data Admin</p>
@@ -46,7 +40,6 @@
               </li>
             </ul>
           </li>
-          <li class="nav-header">DATA MONITORING</li>
           <li class="nav-item">
             <a href="{{ route('pendaftarans.index') }}" class="nav-link">
               <i class="nav-icon far fa-edit"></i>
@@ -60,14 +53,6 @@
               <i class="nav-icon fas fa-chart-bar"></i>
               <p>
                 Traffic
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-server"></i>
-              <p>
-                Server Control
               </p>
             </a>
           </li>
