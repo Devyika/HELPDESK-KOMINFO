@@ -5,6 +5,7 @@ use App\Http\Controllers\PendaftaranController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\SuperadminController;
 use App\Http\Controllers\OpdController;
+use App\Http\Controllers\Dashboard1Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +25,4 @@ Route::resource('pendaftarans', PendaftaranController::class);
 Route::resource('admins', AdminController::class);
 Route::resource('superadmins', SuperadminController::class);
 Route::resource('opds', OpdController::class);
+Route::resource('dashboard1', Dashboard1Controller::class);
