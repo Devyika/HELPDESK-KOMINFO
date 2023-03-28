@@ -17,6 +17,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="{{ asset('lte/dist/css/adminlte.min.css') }}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -36,24 +37,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="row mb-2">
           <div class="col-sm-6">
             @extends('superadmins.layout')
-     
+            </div><!-- /.col -->   
 @section('content')
     <div class="row mt-5 mb-5">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
                 <h2>Data SuperAdmin</h2>
             </div>
-<<<<<<< HEAD
-            <div class="pull-right">
-<<<<<<< HEAD
-                <a class="btn btn-success" href="{{ route('superadmins.create') }}"> Tambah Data</a>
-=======
-                <a class="btn btn-success" href="{{ route('superadmins.create') }}"> Create New SuperAdmin</a>
->>>>>>> origin/eliya
-=======
             <div class="pull-left">
                 <a class="btn btn-success" href="{{ route('superadmins.create') }}"> Tambah Data</a>
->>>>>>> origin/eliya
             </div>
         </div>
     </div>
@@ -67,16 +59,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <table class="table table-bordered">
         <tr>
             <th width="20px"class="text-center">No</th>
-            <th width="280px"class="text-center">Username</th>
-            <th width="280px"class="text-center">Password</th>
-            <th width="380px"class="text-center">Action</th>
+            <th width="380px"class="text-center">Username</th>
+            <th width="380px"class="text-center">Password</th>
+            <th width="400px"class="text-center">Action</th>
         </tr>
         @foreach ($superadmins as $superadmin)
         <tr>
             <td>{{ ++$i }}</td>
             <td>{{ $superadmin->username }}</td>
             <td>{{ $superadmin->password }}</td>
-            <td>
+            <td class="text-center">
                 <form action="{{ route('superadmins.destroy',$superadmin->id) }}" method="POST">
      
                     <a class="btn btn-info btn-sm" href="{{ route('superadmins.show',$superadmin->id) }}">Show</a>
@@ -96,7 +88,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     {!! $superadmins->links() !!}
         
 
-          </div><!-- /.col -->
+          
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -112,10 +104,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   </div>
   <!-- /.content-wrapper -->
 
-  <!-- Main Footer -->
-  @include('dashboard1/footer')
-</div>
-<!-- ./wrapper -->
+
 
 <!-- REQUIRED SCRIPTS -->
 
@@ -127,4 +116,3 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="{{ asset('lte/dist/js/adminlte.min.js') }}"></script>
 </body>
 </html>
-

@@ -27,7 +27,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <!-- Main Sidebar Container -->
   @include('dashboard1/sidebar')
-
+  
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -37,7 +37,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <div class="col-sm-6">
             <h1 class="m-0 text-dark"></h1>
             @extends('opds.layout')
-     
+            </div><!-- /.col -->     
 @section('content')
     <div class="row mt-5 mb-5">
         <div class="col-lg-12 margin-tb">
@@ -62,7 +62,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <th width="150px" class="text-center">Username</th>
             <th width="150px" class="text-center">Password</th>
             <th width="400px" class="text-center">Asal Instansi</th>
-            <th width="800px"class="text-center">Action</th>
+            <th width="400px"class="text-center">Action</th>
             
         </tr>
         @foreach ($opds as $opd)
@@ -71,7 +71,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <td>{{ $opd->username }}</td>
             <td>{{ $opd->password }}</td>
             <td>{{ $opd->asal }}</td>
-            <td>
+            <td class="text-center">
                 <form action="{{ route('opds.destroy',$opd->id) }}" method="POST">
      
                     <a class="btn btn-info btn-sm" href="{{ route('opds.show',$opd->id) }}">Show</a>
@@ -90,10 +90,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     
     {!! $opds->links() !!}
 
-
-          </div><!-- /.col -->
-    
-          </div><!-- /.col -->
+    </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>
@@ -110,10 +107,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   </div>
   <!-- /.content-wrapper -->
 
-  <!-- Main Footer -->
-  @include('dashboard1/footer')
-</div>
-<!-- ./wrapper -->
+
 
 <!-- REQUIRED SCRIPTS -->
 

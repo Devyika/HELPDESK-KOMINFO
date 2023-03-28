@@ -1,14 +1,15 @@
-<aside class="main-sidebar sidebar-light-primary elevation-4">
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
-      <span class="brand-text font-weight-light">HELPDESK</span>
+    <img src="{{ asset('image/logo.png') }}" style="width: 100%; height: 80px;" >
+      
     </a>
     <!-- Sidebar -->
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="info">
-          <a href="#" class="d-block">SuperAdmin</a>
+          <a href="#" class="nav-icon far fa-user">SuperAdmin</a>
         </div>
       </div>
 

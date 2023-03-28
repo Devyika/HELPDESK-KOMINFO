@@ -36,6 +36,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="row mb-2">
           <div class="col-sm-6">
             @extends('admins.layout')
+            </div><!-- /.col -->
             @section('content')
     <div class="row mt-5 mb-5">
         <div class="col-lg-12 margin-tb">
@@ -57,16 +58,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <table class="table table-bordered">
         <tr>
             <th width="20px" class="text-center">No</th>
-            <th width="200px" class="text-center">Username</th>
-            <th width="200px" class="text-center">Password</th>
-            <th width="280px" class="text-center">Action</th>
+            <th width="380px" class="text-center">Username</th>
+            <th width="380px" class="text-center">Password</th>
+            <th width="400px" class="text-center">Action</th>
         </tr>
         @foreach ($admins as $admin)
         <tr>
             <td>{{ ++$i }}</td>
             <td>{{ $admin->username }}</td>
             <td>{{ $admin->password }}</td>
-            <td>
+            <td class="text-center">
                 <form action="{{ route('admins.destroy',$admin->id) }}" method="POST">
      
                     <a class="btn btn-info btn-sm" href="{{ route('admins.show',$admin->id) }}">Show</a>
@@ -86,7 +87,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     {!! $admins->links() !!}
         
 
-          </div><!-- /.col -->
+          
           
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -105,11 +106,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   </div>
   <!-- /.content-wrapper -->
 
-  <!-- Main Footer -->
-  @include('dashboard1/footer')
-</div>
-<!-- ./wrapper -->
-
+  
 <!-- REQUIRED SCRIPTS -->
 
 <!-- jQuery -->
@@ -120,4 +117,3 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="{{ asset('lte/dist/js/adminlte.min.js') }}"></script>
 </body>
 </html>
-

@@ -37,6 +37,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="row mb-2">
           <div class="col-sm-6">
             @section('content')
+            </div><!-- /.col -->
     <div class="row mt-5 mb-5">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
@@ -92,7 +93,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     {!! $pendaftarans->links() !!}
         
 
-          </div><!-- /.col -->
+          
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -110,11 +111,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   </div>
   <!-- /.content-wrapper -->
 
-  <!-- Main Footer -->
-  @include('dashboard1/footer')
-</div>
-<!-- ./wrapper -->
-
+  
 <!-- REQUIRED SCRIPTS -->
 
 <!-- jQuery -->
