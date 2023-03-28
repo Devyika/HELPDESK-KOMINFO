@@ -7,7 +7,11 @@
                 <h2>Data SuperAdmin</h2>
             </div>
             <div class="pull-right">
+<<<<<<< HEAD
                 <a class="btn btn-success" href="{{ route('superadmins.create') }}"> Tambah Data</a>
+=======
+                <a class="btn btn-success" href="{{ route('superadmins.create') }}"> Create New SuperAdmin</a>
+>>>>>>> origin/eliya
             </div>
         </div>
     </div>
