@@ -7,7 +7,6 @@
                 <h2>Edit Opd</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('opds.index') }}"> Back</a>
             </div>
         </div>
     </div>
@@ -34,10 +33,11 @@
                     <input type="text" name="username" value="{{ $opd->username }}" class="form-control" placeholder="Username">
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Password:</strong>
-                    <textarea class="form-control" style="height:150px" name="password" placeholder="Password">{{ $opd->password }}</textarea>
+                    <input type="text" name="password" value="{{ $opd->password }}" class="form-control" placeholder="Name">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">

@@ -27,15 +27,16 @@
          <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Userame:</strong>
+                    <strong>Username:</strong>
                     <input type="text" name="username" value="{{ $admin->username }}" class="form-control" placeholder="Name">
                 </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Password:</strong>
-                    <textarea class="form-control" style="height:150px" name="password" placeholder="Detail">{{ $admin->password }}</textarea>
+                    <input type="text" name="password" value="{{ $admin->password }}" class="form-control" placeholder="Name">
                 </div>
+            </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
               <button type="submit" class="btn btn-primary">Submit</button>

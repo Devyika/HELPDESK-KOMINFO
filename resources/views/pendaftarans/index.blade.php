@@ -38,7 +38,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <div class="col-sm-6">
             @section('content')
     </div><!-- /.col -->
-    <div class="row mt-5 mb-5">
+    <div class="row mt-3 mb-3">
             <div class="pull-left">
                 <h2>DATA WEBSITE OPD</h2>
             </div>

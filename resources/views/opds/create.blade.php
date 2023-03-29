@@ -7,8 +7,6 @@
             <h2>Tambah Data OPD</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('opds.index') }}"> Kembali</a>
-        </div>
     </div>
 </div>
      

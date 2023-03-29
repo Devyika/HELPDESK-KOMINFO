@@ -7,8 +7,6 @@
                 <h2> Tampilan Opd</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('opds.index') }}"> Kembali</a>
-            </div>
         </div>
     </div>
      
@@ -22,7 +20,13 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Password:</strong>
-                {{ $opd->Password }}
+                {{ $opd->password }}
+            </div>
+            </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Asal Instansi:</strong>
+                {{ $opd->asal }}
             </div>
         </div>
         </div>
