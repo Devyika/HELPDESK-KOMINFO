@@ -6,9 +6,6 @@
             <div class="pull-left">
                 <h2> Tampilan Data Admin</h2>
             </div>
-            <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('admins.index') }}"> Kembali</a>
-            </div>
         </div>
     </div>
      

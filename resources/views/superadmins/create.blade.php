@@ -6,9 +6,6 @@
         <div class="pull-left">
             <h2>Tambah Data SuperAdmin</h2>
         </div>
-        <div class="float-end">
-            <a class="btn btn-primary" href="{{ route('superadmins.index') }}"> Kembali</a>
-        </div>
     </div>
 </div>
      

@@ -4,10 +4,7 @@
 <div class="row mt-5 mb-5">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2>Tambah Data Admin</h2>
-        </div>
-        <div class="float-end">
-            <a class="btn btn-primary" href="{{ route('admins.index') }}"> Kembali</a>
+            <h2 class= "text-center">Tambah Data Admin</h2>
         </div>
     </div>
 </div>

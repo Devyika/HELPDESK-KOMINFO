@@ -59,13 +59,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <table class="table table-bordered table-responsive-lg table-hover">
         <thead class="thead-dark">
             <tr>
-            <th scope="col">No</th>
-            <th scope="col">Nama Website</th>
-            <th scope="col">Logo</th>
-            <th scope="col">Alamat URL</th>
-            <th scope="col">Token</th>
-            <th scope="col">Status</th>
-            <th scope="col">Action</th>
+            <th scope="col" class= "text-center">No</th>
+            <th scope="col" class= "text-center">Nama Website</th>
+            <th scope="col" class= "text-center">Logo</th>
+            <th scope="col" class= "text-center">Alamat URL</th>
+            <th scope="col" class= "text-center">Token</th>
+            <th scope="col" class= "text-center">Status</th>
+            <th scope="col" class= "text-center">Action</th>
         </tr>
         </thead>
         <tbody>
