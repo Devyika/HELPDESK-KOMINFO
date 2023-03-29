@@ -1,13 +1,11 @@
 @extends('pendaftarans.layout')
    
 @section('content')
-    <div class="row">
+<form>
+    <div class="row mt-3 mb-3">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2> Tampilan Data Pendaftaran</h2>
-            </div>
-            <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('pendaftarans.index') }}"> Kembali</a>
+                <h2 class="text-center">Data Pendaftaran</h2>
             </div>
         </div>
     </div>
@@ -15,32 +13,33 @@
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Nama Website:</strong>
+                <strong>Nama Website:</strong><br>
                 {{ $pendaftaran->namawebsite}}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Logo:</strong>
-                <img src="/image/{{ $pendaftaran->image }}" width="300px">
+                <strong>Logo:</strong><br>
+                <img src="/image/{{ $pendaftaran->image }}" width="100px">
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>URL:</strong>
+                <strong>URL:</strong><br>
                 {{ $pendaftaran->url }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Token:</strong>
+                <strong>Token:</strong><br>
                 {{ $pendaftaran->token }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Status:</strong>
+                <strong>Status:</strong><br>
                 {{ $pendaftaran->status }}
             </div>
         </div>
     </div>
+</form>
 @endsection

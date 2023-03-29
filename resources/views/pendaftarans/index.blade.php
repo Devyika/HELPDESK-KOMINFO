@@ -37,14 +37,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="row mb-2">
           <div class="col-sm-6">
             @section('content')
-            </div><!-- /.col -->
+    </div><!-- /.col -->
     <div class="row mt-5 mb-5">
-        <div class="col-lg-12 margin-tb">
             <div class="pull-left">
                 <h2>DATA WEBSITE OPD</h2>
             </div>
-            <div class="pull-left">
-                <a class="btn btn-success" href="{{ route('pendaftarans.create') }}"> Tambah Data</a>
+            <div class="pull-right">
+                <a class="btn btn-success text-light" data-toggle="modal" id="mediumButton" data-target="#mediumModal"
+                data-attr="{{ route('pendaftarans.create') }}" title="Tambah Data"> <i class="fas fa-plus-circle"></i>
+                </a>
             </div>
         </div>
     </div>
@@ -55,44 +56,148 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </div>
     @endif
      
-    <table class="table table-bordered">
-        <tr>
-            <th width="20px" class="text-center">No</th>
-            <th width="280px"class="text-center">Nama Website</th>
-            <th width="300px"class="text-center">Logo</th>
-            <th width="280px"class="text-center">Alamat URL</th>
-            <th width="280px"class="text-center">Token</th>
-            <th width="280px"class="text-center">Status</th>
-            <th width="800px"class="text-center">Action</th>
+    <table class="table table-bordered table-responsive-lg table-hover">
+        <thead class="thead-dark">
+            <tr>
+            <th scope="col">No</th>
+            <th scope="col">Nama Website</th>
+            <th scope="col">Logo</th>
+            <th scope="col">Alamat URL</th>
+            <th scope="col">Token</th>
+            <th scope="col">Status</th>
+            <th scope="col">Action</th>
         </tr>
+        </thead>
+        <tbody>
         @foreach ($pendaftarans as $pendaftaran)
         <tr>
-            <td class="text-center">{{ ++$i }}</td>
+            <td scope="row">{{ ++$i }}</td>
             <td>{{ $pendaftaran->namawebsite}}</td>
             <td><img src="/image/{{ $pendaftaran->image }}" width="100px"></td>
             <td>{{ $pendaftaran->url }}</td>
             <td>{{ $pendaftaran->token }}</td>
             <td>{{ $pendaftaran->status }}</td>
             <td class="text-center">
-                <form action="{{ route('pendaftarans.destroy',$pendaftaran->id) }}" method="POST">
-     
-                    <a class="btn btn-info btn-sm" href="{{ route('pendaftarans.show',$pendaftaran->id) }}">Show</a>
-      
-                    <a class="btn btn-primary btn-sm" href="{{ route('pendaftarans.edit',$pendaftaran->id) }}">Edit</a>
-     
-                    @csrf
-                    @method('DELETE')
-        
-                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</button>
-                </form>
+            <form action="{{ route('pendaftarans.destroy', $pendaftaran->id) }}" method="POST">
+
+            <a data-toggle="modal" id="smallButton" data-target="#smallModal"
+             data-attr="{{ route('pendaftarans.show', $pendaftaran->id) }}" title="show">
+             <i class="btn btn-sm btn-info">Show</i>
+            </a>
+
+            <a class="text-secondary" data-toggle="modal" id="mediumButton" data-target="#mediumModal"
+               data-attr="{{ route('pendaftarans.edit', $pendaftaran->id) }}">
+               <i class="btn btn-sm btn-warning">Edit</i>
+                </a>
+            @csrf
+            @method('DELETE')
+
+            <button type="submit" title="delete" style="border: none; background-color:transparent;">
+             <i class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</i>
+        </button>
+    </form>
             </td>
         </tr>
         @endforeach
+        </tbody>
     </table>
     
     {!! $pendaftarans->links() !!}
         
+<!-- small modal -->
+<div class="modal fade" id="smallModal" tabindex="-1" role="dialog" aria-labelledby="smallModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="smallBody">
+                    <div>
+                        <!-- the result to be displayed apply here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+
+    <!-- medium modal -->
+    <div class="modal fade" id="mediumModal" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="mediumBody">
+                    <div>
+                        <!-- the result to be displayed apply here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // display a modal (small modal)
+        $(document).on('click', '#smallButton', function(event) {
+            event.preventDefault();
+            let href = $(this).attr('data-attr');
+            $.ajax({
+                url: href,
+                beforeSend: function() {
+                    $('#loader').show();
+                },
+                // return the result
+                success: function(result) {
+                    $('#smallModal').modal("show");
+                    $('#smallBody').html(result).show();
+                },
+                complete: function() {
+                    $('#loader').hide();
+                },
+                error: function(jqXHR, testStatus, error) {
+                    console.log(error);
+                    alert("Page " + href + " cannot open. Error:" + error);
+                    $('#loader').hide();
+                },
+                timeout: 8000
+            })
+        });
+
+        // display a modal (medium modal)
+        $(document).on('click', '#mediumButton', function(event) {
+            event.preventDefault();
+            let href = $(this).attr('data-attr');
+            $.ajax({
+                url: href,
+                beforeSend: function() {
+                    $('#loader').show();
+                },
+                // return the result
+                success: function(result) {
+                    $('#mediumModal').modal("show");
+                    $('#mediumBody').html(result).show();
+                },
+                complete: function() {
+                    $('#loader').hide();
+                },
+                error: function(jqXHR, testStatus, error) {
+                    console.log(error);
+                    alert("Page " + href + " cannot open. Error:" + error);
+                    $('#loader').hide();
+                },
+                timeout: 8000
+            })
+        });
+
+    </script>
           
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -110,7 +215,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-
+  @endsection
   
 <!-- REQUIRED SCRIPTS -->
 

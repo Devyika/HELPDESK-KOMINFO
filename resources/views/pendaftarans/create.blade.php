@@ -1,13 +1,10 @@
 @extends('pendaftarans.layout')
   
 @section('content')
-<div class="row mt-5 mb-5">
+<div class="row mt-3 mb-3">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2>Pendaftaran Website OPD</h2>
-        </div>
-        <div class="float-end">
-            <a class="btn btn-primary" href="{{ route('pendaftarans.index') }}"> Kembali</a>
+            <h2 class= "text-center">Pendaftaran Website OPD</h2>
         </div>
     </div>
 </div>
@@ -54,8 +51,8 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Status:</strong><br>
-                <input type="radio" name="status" value="publish" id="status" selected> Publish
-                <input type="radio" name="status"  value="no publish" id="status" selected> No Publish
+                <input type="radio" name="status" value="Publish" id="status" selected> Publish
+                <input type="radio" name="status"  value="Private" id="status" selected> Private
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
