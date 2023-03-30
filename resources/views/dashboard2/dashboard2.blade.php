@@ -35,8 +35,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Selamat datang Admin</h1>
+            <h1 class="m-0 text-dark"></h1>
+
           </div><!-- /.col -->
+          @section('content') 
+
+          <div class="row mt-2 mb-5">
+        <div class="col-12 margin-tb" style="margin-right: 300px;">
+            
+                <h2>Selamat Datang Admin</h2>
+          
+        </div>
+       </div>
+
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
