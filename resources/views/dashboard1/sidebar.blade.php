@@ -18,7 +18,7 @@
           
           <li class="nav-item has-treeview menu-open">
             <a href="#" class="nav-link active">
-              <i class="nav-icon far fa-folder"></i>
+              <i class="nav-icon far fa-folder-open"></i>
               <p>
                 Kelola Data
                 <i class="right fas fa-angle-left"></i>
@@ -27,19 +27,19 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{{ route('superadmins.index') }}" class="nav-link">
-                  <i class="nav-icon fas fa-book"></i>
+                  <i class="nav-icon fas fa-user-edit"></i>
                   <p>Data SuperAdmin</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{ route('admins.index') }}" class="nav-link">
-                  <i class="nav-icon fas fa-book"></i>
+                  <i class="nav-icon fas fa-user-edit"></i>
                   <p>Data Admin</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{ route('opds.index') }}" class="nav-link">
-                  <i class="nav-icon fas fa-book"></i>
+                  <i class="nav-icon fas fa-user-edit"></i>
                   <p>Data OPD</p>
                 </a>
               </li>
@@ -56,9 +56,17 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-chart-bar"></i>
+              <i class="nav-icon fas fa-chart-line"></i>
               <p>
                 Traffic
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-clipboard-check"></i>
+              <p>
+                Laporan
               </p>
             </a>
           </li>
