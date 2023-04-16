@@ -1,29 +1,27 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Admin2Model;
 use Illuminate\Http\Request;
 
-use App\Models\SuperadminModel;
-
-class SuperadminController extends Controller
+class Admin2Controller extends Controller
 {
     //method yang dipanggil pertama kali
     public function index(){
-        return view('superadmin.superadmin_index'); //load view
+        return view('admin2.admin2_index'); //load view
     }
 
     //method untuk tampilkan data di tabel
     public function data(){
-        $data  = SuperadminModel::select("*")->orderBy('created_at', 'DESC')->get(); //query get semua data ke model
-        $form = view("superadmin.superadmin_data", ['data' => $data]); //passing data ke view
+        $data  = Admin2Model::select("*")->orderBy('created_at', 'DESC')->get(); //query get semua data ke model
+        $form = view("admin2.admin2_data", ['data' => $data]); //passing data ke view
         $darr=array('data'=>''.$form.''); //convert ke bentuk array
         return response()->json($darr); //convert ke respone json
     }
 
     //method untuk tampilkan form input
     public function input(){
-        $form = view("superadmin.superadmin_input"); //load view
+        $form = view("admin2.admin2_input"); //load view
         $darr=array('data'=>''.$form.''); //convert ke bentuk array
         return response()->json($darr); //convert ke respone json
     }
@@ -35,7 +33,7 @@ class SuperadminController extends Controller
         $inputclear = \Arr::except($request->all(), array('_token', '_method')); //pisahkan parameter token 
         $username = $request->input('username'); //tangkap parameter npm yang di post
 
-        $cek = SuperadminModel::where('username', '=', $username)->count(); //query cek npm apakah sudah ada di tabel atau belum
+        $cek = Admin2Model::where('username', '=', $username)->count(); //query cek npm apakah sudah ada di tabel atau belum
         if($cek) {
             return response()->json([ //respon json jika gagal
                 'status' => false,
@@ -44,7 +42,7 @@ class SuperadminController extends Controller
             return false;
         }
 
-        $post = SuperadminModel::create($inputclear); //jika lolos pengecekan npm maka query insert ini jalan 
+        $post = Admin2Model::create($inputclear); //jika lolos pengecekan npm maka query insert ini jalan 
         return response()->json([ //respon json jika berhasil
             'status' => true,
             'info' => 'Success'
@@ -55,9 +53,9 @@ class SuperadminController extends Controller
     public function edit(Request $request)
     {
         $where = array('id' => $request->input('id')); //tangkap parameter id yang di post
-        $post  = SuperadminModel::where($where)->first(); //get ke tabel di model berdasarkan id
+        $post  = Admin2Model::where($where)->first(); //get ke tabel di model berdasarkan id
 
-        $form = view("superadmin.superadmin_edit", ['data' => $post]); //passing data ke view
+        $form = view("admin2.admin2_edit", ['data' => $post]); //passing data ke view
         $darr=array('data'=>''.$form.''); //convert ke bentuk array
         return response()->json($darr); //convert ke respone json
     }
@@ -70,9 +68,9 @@ class SuperadminController extends Controller
         $id = $request->input('id'); //tangkap parameter id yang di post
         $username = $request->input('username'); //tangkap parameter npm yang di post
 
-        $username_b = SuperadminModel::select('username')->where('id', $id)->first(); //get data by id untuk dapatkan npm lama 
+        $username_b = Admin2Model::select('username')->where('id', $id)->first(); //get data by id untuk dapatkan npm lama 
 
-        $cek = SuperadminModel::where([ //query cek npm apakah sudah ada di tabel atau belum dibandingkan dengan npm baru dan lama
+        $cek = Admin2Model::where([ //query cek npm apakah sudah ada di tabel atau belum dibandingkan dengan npm baru dan lama
             ['username', '!=', $username_b->username],
             ['username', '=', $username]
         ])->count();
@@ -84,7 +82,7 @@ class SuperadminController extends Controller
             return false;
         }
 
-        SuperadminModel::where('id', $id)->update($inputclear); //jika lolos pengecekan npm maka query update ini jalan 
+        Admin2Model::where('id', $id)->update($inputclear); //jika lolos pengecekan npm maka query update ini jalan 
         return response()->json([ //respon json jika berhasil
             'status' => true,
             'info' => "Success"
@@ -94,7 +92,7 @@ class SuperadminController extends Controller
     //method untuk delete data
     public function destroy($id)
     {
-        SuperadminModel::where('id', $id)->delete(); //query delete data berdasarkan id
+        Admin2Model::where('id', $id)->delete(); //query delete data berdasarkan id
         return response()->json([ //respon json jika berhasil
             'status' => true,
             'info' => "Success"
@@ -102,3 +100,4 @@ class SuperadminController extends Controller
     }
 
 }
+

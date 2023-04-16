@@ -1,3 +1,37 @@
+<!doctype html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Description" content="Belajar CRUD dengan ajax di laravel">
+    <meta name="Author" content="zai.web.id">
+    <meta name="Keywords" content="CRUD dengan ajax di laravel" />
+
+
+    <!--- Favicon --->
+    <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon" />
+
+    <!--- CDN CSS bootstrap --->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+     <!--- CDN Jquery --->
+     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+     
+    <!--- CDN Jquery bootstrap --->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    @stack('costum-script')
+</body>
+</html>
+
 @extends('pendaftarans.layout')
 <!DOCTYPE html>
 <!--
@@ -38,34 +72,34 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <div class="col-sm-6">
             @section('content')
     </div><!-- /.col -->
-    <div class="row mt-3 mb-3">
-            <div class="pull-left">
-                <h2>DATA WEBSITE OPD</h2>
-            </div>
-            <div class="pull-right">
-                <a class="btn btn-success text-light" data-toggle="modal" id="mediumButton" data-target="#mediumModal"
-                data-attr="{{ route('pendaftarans.create') }}" title="Tambah Data"> <i class="fas fa-plus-circle"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    @if ($message = Session::get('success'))
+    <div class="p-4" id="main-content">
+          <div class="card mt-5">
+            <div class="card-body">
+              <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card mt-5 mb-5">
+                    <div class="card-header">
+                        Data Website OPD
+                    </div>
+                    <div class="card-body">   
+                        <div class="table-responsive" id="area_tabel">
+                        @if ($message = Session::get('success'))
         <div class="alert alert-success">
             <p>{{ $message }}</p>
         </div>
     @endif
-     
-    <table class="table table-bordered table-responsive-lg table-hover">
+                
+                        <table class="table table-bordered table-responsive-lg table-hover">
         <thead class="thead-dark">
             <tr>
-            <th scope="col" class= "text-center">No</th>
-            <th scope="col" class= "text-center">Nama Website</th>
-            <th scope="col" class= "text-center">Logo</th>
-            <th scope="col" class= "text-center">Alamat URL</th>
-            <th scope="col" class= "text-center">Token</th>
-            <th scope="col" class= "text-center">Status</th>
-            <th scope="col" class= "text-center">Action</th>
+            <th scope="col" class= "text-center">NO</th>
+            <th scope="col" class= "text-center">NAMA WEBSITE</th>
+            <th scope="col" class= "text-center">LOGO</th>
+            <th scope="col" class= "text-center">ALAMAT URL</th>
+            <th scope="col" class= "text-center">TOKEN</th>
+            <th scope="col" class= "text-center">STATUS</th>
+            <th scope="col" class= "text-center">AKSI</th>
         </tr>
         </thead>
         <tbody>
@@ -80,20 +114,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <td class="text-center">
             <form action="{{ route('pendaftarans.destroy', $pendaftaran->id) }}" method="POST">
 
-            <a data-toggle="modal" id="smallButton" data-target="#smallModal"
-             data-attr="{{ route('pendaftarans.show', $pendaftaran->id) }}" title="show">
-             <i class="btn btn-sm btn-info">Show</i>
-            </a>
-
             <a class="text-secondary" data-toggle="modal" id="mediumButton" data-target="#mediumModal"
                data-attr="{{ route('pendaftarans.edit', $pendaftaran->id) }}">
-               <i class="btn btn-sm btn-warning">Edit</i>
+               <i class="btn btn-info">Edit</i>
                 </a>
             @csrf
             @method('DELETE')
-
+            
             <button type="submit" title="delete" style="border: none; background-color:transparent;">
-             <i class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</i>
+             <i class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</i>
         </button>
     </form>
             </td>
@@ -199,24 +228,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     </script>
           
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content-header -->
-
-    <!-- Main content -->
-    <div class="content">
-      <div class="container-fluid">
-        @yield('content')
-        <!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
-  @endsection
-  
+         
 <!-- REQUIRED SCRIPTS -->
 
 <!-- jQuery -->

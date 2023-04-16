@@ -9,7 +9,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>Halaman Admin</title>
+  <title>Halaman Superadmin</title>
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="{{ asset('lte/plugins/fontawesome-free/css/all.min.css') }}">
@@ -17,6 +17,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="{{ asset('lte/dist/css/adminlte.min.css') }}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <link href="style.css">
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -27,7 +28,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <!-- Main Sidebar Container -->
   @include('dashboard2/sidebar')
-
+  
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -37,18 +38,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <div class="col-sm-6">
             <h1 class="m-0 text-dark"></h1>
 
-          </div><!-- /.col -->
-          @section('content') 
+  </div><!-- /.col -->     
+@section('content')
 
-          <div class="row mt-2 mb-5">
+    <div class="row mt-2 mb-5">
         <div class="col-12 margin-tb" style="margin-right: 300px;">
             
                 <h2>Selamat Datang Admin</h2>
           
         </div>
-       </div>
+    </div>
+    
+    
 
-          </div><!-- /.col -->
+    </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>
@@ -65,10 +68,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   </div>
   <!-- /.content-wrapper -->
 
-  <!-- Main Footer -->
-  @include('dashboard2/footer')
-</div>
-<!-- ./wrapper -->
+
 
 <!-- REQUIRED SCRIPTS -->
 
@@ -80,3 +80,4 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="{{ asset('lte/dist/js/adminlte.min.js') }}"></script>
 </body>
 </html>
+
