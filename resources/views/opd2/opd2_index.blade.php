@@ -44,7 +44,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>Halaman Superadmin</title>
+  <title>Halaman Admin</title>
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="{{ asset('lte/plugins/fontawesome-free/css/all.min.css') }}">
@@ -80,7 +80,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="col-md-12">
                 <div class="card mt-5 mb-5">
                     <div class="card-header">
-                        Data OPD
+                        Data User
                     </div>
                     <div class="card-body">
                         
@@ -122,7 +122,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     //fungsi untuk load tabel
     window.reload_table = function() {
-        var url = "{{ route('opd.data') }}";
+        var url = "{{ route('opd2.data') }}";
         var param = {};
         $.ajax({
             type: "GET",
@@ -141,7 +141,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     //fungsi untuk load form input
     window.input = function() {
         $("#mdl_modal_form").modal({backdrop: 'static',keyboard: false});
-        var url = "{{ route('opd.input') }}";
+        var url = "{{ route('opd2.input') }}";
         var param = {};
         $.ajax({
             type: "GET",
@@ -158,10 +158,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
     }
 
     //fungsi untuk load form edit
-    window.edit = function(id) {
+    window.edit = function(id_user) {
         $("#mdl_modal_form").modal({backdrop: 'static',keyboard: false});
-        var url = "{{ route('opd.edit') }}";
-        var param = {id: id};
+        var url = "{{ route('opd2.edit') }}";
+        var param = {id_user: id_user};
         $.ajax({
             type: "GET",
             dataType: "json",
@@ -207,7 +207,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     //fungsi untuk delete dengan konfirmasi
     window.hapus = function(id){
         if (confirm("Are you sure?")) {
-            var url = "opd/destroy/"+id;
+            var url = "opd2/destroy/"+id;
             var param = {id: id};
             $.ajax({
                 type: "DELETE",

@@ -10,24 +10,22 @@
     <div class="modal-body">
         @csrf
         <div class="row">
-            <div class="col-md-12">
-                <div class="form-group">
-                    <label>USERNAME</label>
-                    <input type="text" class="form-control" name="username" placeholder="username" required>
+        <div class="form-group">
+                    <label><i class="fa fa-user"></i> Username</label>
+                    <input type="text" name="username" class="form-control" placeholder="Username" required="">
                 </div>
                 <div class="form-group">
-                    <label>Password</label>
-                    <input type="text" class="form-control" name="password" placeholder="password" required>
+                    <label><i class="fa fa-key"></i> Password</label>
+                    <input type="password" name="password" class="form-control" placeholder="Password" required="">
                 </div>
                 <div class="form-group">
-                    <label>Asal Instansi</label>
-                    <input type="text" class="form-control"  name="asal" placeholder="asal">
+                    <label><i class="fa fa-address-book"></i> Role</label>
+                    <input type="text" name="role_id" class="form-control" value="opd" readonly>
                 </div>
-            </div>
         </div>
     </div>
     <div class="modal-footer">
-        <button type="button" onclick="formSubmit('modal_input')" class="btn btn-primary"><i id="msg_modal_input"></i>  Save changes</button>
+        <button type="button" onclick="formSubmit('modal_input')" class="btn btn-primary"><i id="msg_modal_input"></i>Tambah</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
     </div>
     </form>

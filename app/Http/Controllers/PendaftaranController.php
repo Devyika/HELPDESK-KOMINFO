@@ -40,9 +40,10 @@ class PendaftaranController extends Controller
     {
         $request->validate([
             'namawebsite' => 'required',
-            'image'       => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image'       => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:7000',
             'url'         => 'required',
             'token'       => 'required',
+            'file'       => 'required|file|mimes:json|max:10000',
             'status'      => 'required',
         ]);
   
@@ -54,11 +55,17 @@ class PendaftaranController extends Controller
             $image->move($destinationPath, $profileImage);
             $input['image'] = "$profileImage";
         }
+        if ($file = $request->file('file')) {
+            $destinationPath = 'file/';
+            $profileFile = date('YmdHis') . "." . $file->getClientOriginalExtension();
+            $file->move($destinationPath, $profileFile);
+            $input['file'] = "$profileFile";
+        }
     
         Pendaftaran::create($input);
      
-        return redirect()->route('pendaftarans.index')
-                        ->with('success','Pendaftaran created successfully.');
+        return redirect()->route('pendaftarans.create')
+                        ->with('success','Data Berhasil Ditambah');
     }
      
     /**
@@ -96,6 +103,7 @@ class PendaftaranController extends Controller
             'namawebsite' => 'required',
             'url'         => 'required',
             'token'       => 'required',
+            'file'       =>  'required',
             'status'      => 'required',
         ]);
   
@@ -109,11 +117,21 @@ class PendaftaranController extends Controller
         }else{
             unset($input['image']);
         }
+
+        if ($file = $request->file('file')) {
+            $destinationPath = 'file/';
+            $profileFile = date('YmdHis') . "." . $file->getClientOriginalExtension();
+            $file->move($destinationPath, $profileFile);
+            $input['file'] = "$profileFile";
+        }else{
+            unset($input['file']);
+        }
+          
           
         $pendaftaran->update($input);
     
         return redirect()->route('pendaftarans.index')
-                        ->with('success','Pendaftaran updated successfully');
+                        ->with('success','Data Berhasil Diupdate');
     }
   
     /**
@@ -127,6 +145,6 @@ class PendaftaranController extends Controller
         $pendaftaran->delete();
      
         return redirect()->route('pendaftarans.index')
-                        ->with('success','Pendaftaran deleted successfully');
+                        ->with('success','Data Berhasil Dihapus');
     }
 }

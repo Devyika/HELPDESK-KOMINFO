@@ -80,7 +80,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="col-md-12">
                 <div class="card mt-5 mb-5">
                     <div class="card-header">
-                        Data Website OPD
+                    <h6 class="text-center">DATA WEBSITE</h6>
                     </div>
                     <div class="card-body">   
                         <div class="table-responsive" id="area_tabel">
@@ -98,8 +98,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <th scope="col" class= "text-center">LOGO</th>
             <th scope="col" class= "text-center">ALAMAT URL</th>
             <th scope="col" class= "text-center">TOKEN</th>
+            <th scope="col" class= "text-center">FILE JSON</th>
             <th scope="col" class= "text-center">STATUS</th>
-            <th scope="col" class= "text-center">AKSI</th>
+            <th width="150px" class= "text-center">AKSI</th>
         </tr>
         </thead>
         <tbody>
@@ -110,19 +111,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <td><img src="/image/{{ $pendaftaran->image }}" width="100px"></td>
             <td>{{ $pendaftaran->url }}</td>
             <td>{{ $pendaftaran->token }}</td>
+            <td>{{ $pendaftaran->file }}</td>
             <td>{{ $pendaftaran->status }}</td>
             <td class="text-center">
             <form action="{{ route('pendaftarans.destroy', $pendaftaran->id) }}" method="POST">
 
-            <a class="text-secondary" data-toggle="modal" id="mediumButton" data-target="#mediumModal"
-               data-attr="{{ route('pendaftarans.edit', $pendaftaran->id) }}">
-               <i class="btn btn-info">Edit</i>
-                </a>
+            
             @csrf
             @method('DELETE')
             
             <button type="submit" title="delete" style="border: none; background-color:transparent;">
-             <i class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</i>
+             <i class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')"><i class="fas fa-trash"></i></i>
         </button>
     </form>
             </td>

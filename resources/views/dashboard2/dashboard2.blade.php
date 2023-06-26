@@ -38,7 +38,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <div class="col-sm-6">
             <h1 class="m-0 text-dark"></h1>
 
-  </div><!-- /.col -->     
+ 
 @section('content')
 
     <div class="row mt-2 mb-5">

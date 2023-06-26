@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\AdminModel;
+use Illuminate\Support\Facades\Hash;
+use App\Models\User;
+use Session;
 
 class AdminController extends Controller
 {
@@ -14,7 +16,7 @@ class AdminController extends Controller
 
     //method untuk tampilkan data di tabel
     public function data(){
-        $data  = AdminModel::select("*")->orderBy('created_at', 'DESC')->get(); //query get semua data ke model
+        $data  = User::select("*")->orderBy('created_at', 'DESC')->get(); //query get semua data ke model
         $form = view("admin.admin_data", ['data' => $data]); //passing data ke view
         $darr=array('data'=>''.$form.''); //convert ke bentuk array
         return response()->json($darr); //convert ke respone json
@@ -33,8 +35,9 @@ class AdminController extends Controller
         $postall = $request->all(); //tangkap semua parameter yang di post
         $inputclear = \Arr::except($request->all(), array('_token', '_method')); //pisahkan parameter token 
         $username = $request->input('username'); //tangkap parameter npm yang di post
+        $password = Hash::make ( $request->input('password'));
 
-        $cek = AdminModel::where('username', '=', $username)->count(); //query cek npm apakah sudah ada di tabel atau belum
+        $cek = User::where('username', '=', $username)->count(); //query cek npm apakah sudah ada di tabel atau belum
         if($cek) {
             return response()->json([ //respon json jika gagal
                 'status' => false,
@@ -43,18 +46,24 @@ class AdminController extends Controller
             return false;
         }
 
-        $post = AdminModel::create($inputclear); //jika lolos pengecekan npm maka query insert ini jalan 
+        $post = User::create([
+            'username' => $request->username,
+            'password' => Hash::make($request->password),
+            'role_id' => $request->role_id,
+        ]); 
+        
+        //jika lolos pengecekan npm maka query insert ini jalan 
         return response()->json([ //respon json jika berhasil
             'status' => true,
-            'info' => 'Success'
+            'info' => 'Data Berhasil Ditambahkan',
         ], 201);
     }
 
     //method untuk tampilkan form edit
     public function edit(Request $request)
     {
-        $where = array('id' => $request->input('id')); //tangkap parameter id yang di post
-        $post  = AdminModel::where($where)->first(); //get ke tabel di model berdasarkan id
+        $where = array('id_user' => $request->input('id_user')); //tangkap parameter id yang di post
+        $post  = User::where($where)->first(); //get ke tabel di model berdasarkan id
 
         $form = view("admin.admin_edit", ['data' => $post]); //passing data ke view
         $darr=array('data'=>''.$form.''); //convert ke bentuk array
@@ -66,12 +75,12 @@ class AdminController extends Controller
     {
         $postall = $request->all(); //tangkap semua parameter yang di post
         $inputclear = \Arr::except($request->all(), array('_token', '_method')); //pisahkan parameter token 
-        $id = $request->input('id'); //tangkap parameter id yang di post
+        $id_user = $request->input('id_user'); //tangkap parameter id yang di post
         $username = $request->input('username'); //tangkap parameter npm yang di post
 
-        $username_b = AdminModel::select('username')->where('id', $id)->first(); //get data by id untuk dapatkan npm lama 
+        $username_b = User::select('username')->where('id_user', $id_user)->first(); //get data by id untuk dapatkan npm lama 
 
-        $cek = AdminModel::where([ //query cek npm apakah sudah ada di tabel atau belum dibandingkan dengan npm baru dan lama
+        $cek = User::where([ //query cek npm apakah sudah ada di tabel atau belum dibandingkan dengan npm baru dan lama
             ['username', '!=', $username_b->username],
             ['username', '=', $username]
         ])->count();
@@ -83,22 +92,21 @@ class AdminController extends Controller
             return false;
         }
 
-        AdminModel::where('id', $id)->update($inputclear); //jika lolos pengecekan npm maka query update ini jalan 
+        User::where('id_user', $id_user)->update($inputclear); //jika lolos pengecekan npm maka query update ini jalan 
         return response()->json([ //respon json jika berhasil
             'status' => true,
-            'info' => "Success"
+            'info' => "Data Berhasil Diperbarui"
         ], 201);
     }
 
     //method untuk delete data
-    public function destroy($id)
+    public function destroy($id_user)
     {
-        AdminModel::where('id', $id)->delete(); //query delete data berdasarkan id
+        User::where('id_user', $id_user)->delete(); //query delete data berdasarkan id
         return response()->json([ //respon json jika berhasil
             'status' => true,
-            'info' => "Success"
+            'info' => "Data Berhasil Dihapus"
         ], 201);
     }
 
 }
-

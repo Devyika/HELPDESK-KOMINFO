@@ -9,7 +9,7 @@
         method="post">
     <div class="modal-body">
         @csrf
-        <input type="hidden" name="id" value="{{ $data->id }}">
+        <input type="hidden" name="id_user" value="{{ $data->id_user }}">
         <div class="row">
             <div class="col-md-12">
                 <div class="form-group">
@@ -19,6 +19,10 @@
                 <div class="form-group">
                     <label>PASSWORD</label>
                     <input type="text" class="form-control" name="password" placeholder="password" value="{{ $data->password }}" required>
+                </div>
+                <div class="form-group">
+                    <label>ROLE</label>
+                    <input type="text" class="form-control"  name="role_id" value="{{ $data->role_id }}" placeholder="role">
                 </div>
             </div>
         </div>

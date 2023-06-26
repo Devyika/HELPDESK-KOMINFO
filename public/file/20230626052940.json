@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "aisfitria",
+  "private_key_id": "a045a0905e6f1697cefc2f845fbf426c02611c0d",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCrSiGQcg+yCYaz\nO1sku54uIwcjnFLiA6L15q9Y1rcxYM6IZ+B3Iu1Zt8JGlclcTB1hEOQgqX35Tfty\n0Fn9cr5GNHMSnooWNGAnHYz5Jhyf+QSS2PufbqQXUVWAlb6opavY5+C52QMbmnTq\nHOh/exCJWjQA2nvnhdWx3c8cipBTikPdh3EyWAQG5nB6sbo5dGynPi7mcLme5fF1\nvmg/byi7G25Uk7my1Wqu7AAg0IRlZnsyr851pneBI6iaMLgc3oAbExF/wqaOEhB1\nBOqbQ15cGmfVymNp1rpbLqerWuMzODd63GrdyYCcCrR9+E2hVU6iv55XSyQtGvMS\n6tRC4lgfAgMBAAECggEANrpnUfsXp7dieebHnstxZWVctRSP6NXnnfDYaqaj/ptj\nMfMapYYb1vQfFyVpoltRcb+PXB47eUngwtTuQ8wDHnRIphTQovqWFDldXwe90qEi\nRHceolicBjU+/+gYdFMGvrWLuGWtmAa4P0sAQCcGaBRRlEo6l4VL+1oXABQHvCDl\nD6mB7zeA7TNNceBZr0vlZ68MmsWExtWo96qbFYHPtXUtybvXFWnyLyv8yasHuvyH\ntq/5lDhjfgVxG4jwn4eUgjaldYZ0w1VM9dUSank2SOCj8mi/ZzQFLfAEY/4cuzYd\nTfUbxP8ee3e9601UrDTMjcGp+Atcuo/qoW2fmg62xQKBgQDq0wDk8bLoNeqQNrrP\nYZuzj8YlVVlGOj89Yj/XT/+o3J++qpqFDR/lYICik/jY2p+7Tr8X67jBQ43UunGF\nFymCATqU0vpaTsHt2nJ76VHtxiPZKDjcPHScwo+Vs9OZFkQqCB5pQ23JfxSEJ5EA\niHoldkAlirFlUIMN9kHd1A+MTQKBgQC6vGicr+4c1z8rrXG5R0O1J24bSLOlS01O\nMHZY8LIxs2ayoTfiB29QPs+qYXMXK7sI76/XGXuskKXAAe3paWezhUbujiI1TWC/\nDe7sQjFMLTO38fspDV8HscFHoBirLNFsTOedGB6IM7qzMElvIHqqlQf2geXC+G+C\n2YzQBg68GwKBgDeQE88YTZ/aWhUjjhJR4zialWTyC/ys/Ze1rqtwt2qqQXYpAgTn\ndRueOPG/F4ugN1lnqZmsYfwA0wd50jCOqXikd8sNHMXPit2P6bTeIU+kqYjRlpqu\nB12sP7NJaJD5jslvQFrh5JFf62fVwN6ibFx+3XDEn3L8mPXtxeoKKl+lAoGAS8t3\nxsmeI7S2nlrrQyIK+HfFuGtdB6W1/hurndQs8AF6mNzZWvRbmT21etnNJkWIyErJ\nm8xrJ5MaxAHEeK5g+jwJm4Czn+EFeOcF6H3BlsLuMCaXJIWZ4fyjkBgKi0hIxOW+\nSURl+DDPAjaCSAnt4FlXfxYglW/Ti1AUWMdsqasCgYAOTDGD8PICXAPA0heNyCXn\n076r5w3hE5s7vMOtjGzojR37DDZ1QzO8rBDOYX5O+OFz+6GldHp005+jIG6Kx3dK\nf0V5Tg0YmgwoJldSGOfRl8uKdTko/X6iQKGO/ovdA9S5uVb1UUZPtT2vunR+FjF6\nLePH3vWVTFgMUxHRQxnz2A==\n-----END PRIVATE KEY-----\n",
+  "client_email": "aisfitria@aisfitria.iam.gserviceaccount.com",
+  "client_id": "114957131719453739027",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/aisfitria%40aisfitria.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

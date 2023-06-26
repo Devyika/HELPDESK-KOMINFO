@@ -37,14 +37,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="row mb-2">
           <div class="col-sm-6">
             <h1 class="m-0 text-dark"></h1>
-
-  </div><!-- /.col -->     
+    
 @section('content')
 
     <div class="row mt-2 mb-5">
         <div class="col-12 margin-tb" style="margin-right: 300px;">
             
-                <h2>Selamat Datang Super Admin</h2>
+                <h2>Selamat Datang SuperAdmin</h2>
           
         </div>
     </div>

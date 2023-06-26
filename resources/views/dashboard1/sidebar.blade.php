@@ -12,16 +12,14 @@
         <!-- Brand Logo -->
         <a href="index3.html" class="brand-link">
         <img src="{{ asset('image/logoweb.png') }}" style="width: 50%; height: 50%; margin-left: 50px" >
-        
-        <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-        
-            <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-home mb-2 mt-2 p-2"></i>
+        <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-user mb-2 mt-2 p-2 "></i>
               <p>
-                Dashboard
+                SuperAdmin
               </p>
             </a>
+        <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview menu-open">
             <a href="#" class="nav-link active">
               <i class="nav-icon far fa-folder-open"></i>
@@ -31,7 +29,7 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item">
+            <li class="nav-item">
                 <a href="{{ route('superadmin.index') }}" class="nav-link">
                   <i class="nav-icon fas fa-user-edit"></i>
                   <p>Data SuperAdmin</p>
@@ -61,7 +59,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{ route('traffic1.index') }}" class="nav-link">
               <i class="nav-icon fas fa-chart-line"></i>
               <p>
                 Traffic
@@ -69,7 +67,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{ route('lapors.index') }}" class="nav-link">
               <i class="nav-icon fas fa-clipboard-check"></i>
               <p>
                 Laporan
@@ -84,8 +82,9 @@
               </p>
             </a>
           </li>
+     
         </ul>
-        
+       
       </nav>
       <!-- /.sidebar-menu -->
     </div>

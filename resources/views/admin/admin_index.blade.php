@@ -44,7 +44,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>Halaman Superadmin</title>
+  <title>Halaman SuperAdmin</title>
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="{{ asset('lte/plugins/fontawesome-free/css/all.min.css') }}">
@@ -80,7 +80,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="col-md-12">
                 <div class="card mt-5 mb-5">
                     <div class="card-header">
-                        Data Admin
+                        Data User
                     </div>
                     <div class="card-body">
                         
@@ -158,10 +158,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
     }
 
     //fungsi untuk load form edit
-    window.edit = function(id) {
+    window.edit = function(id_user) {
         $("#mdl_modal_form").modal({backdrop: 'static',keyboard: false});
         var url = "{{ route('admin.edit') }}";
-        var param = {id: id};
+        var param = {id_user: id_user};
         $.ajax({
             type: "GET",
             dataType: "json",

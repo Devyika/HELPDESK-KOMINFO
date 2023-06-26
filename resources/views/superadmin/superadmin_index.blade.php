@@ -80,7 +80,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="col-md-12">
                 <div class="card mt-5 mb-5">
                     <div class="card-header">
-                        Data Superadmin
+                        Data User
                     </div>
                     <div class="card-body">
                         
@@ -158,10 +158,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
     }
 
     //fungsi untuk load form edit
-    window.edit = function(id) {
+    window.edit = function(id_user) {
         $("#mdl_modal_form").modal({backdrop: 'static',keyboard: false});
         var url = "{{ route('superadmin.edit') }}";
-        var param = {id: id};
+        var param = {id_user: id_user};
         $.ajax({
             type: "GET",
             dataType: "json",
@@ -252,6 +252,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="{{ asset('lte/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('lte/dist/js/adminlte.min.js') }}"></script>
+
 </body>
 </html>
 

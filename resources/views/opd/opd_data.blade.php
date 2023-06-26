@@ -1,11 +1,11 @@
 <table class="table table-striped table-bordered">
 <thead class="thead-dark">
         <tr>
-            <th scope="col">NO</th>
-            <th scope="col">USERNAME</th>
-            <th scope="col">PASSWORD</th>
-            <th scope="col">ASAL INSTANSI</th>
-            <th scope="col">AKSI</th>
+            <th scope="col" class="text-center">NO</th>
+            <th scope="col" class="text-center">USERNAME</th>
+            <th scope="col" class="text-center">PASSWORD</th>
+            <th scope="col" class="text-center">ROLE</th>
+            <th scope="col" class="text-center">AKSI</th>
         </tr>
     </thead>
     <tbody>
@@ -16,8 +16,8 @@
                 <td>{{ $no++ }}</td>
                 <td>{{ $v->username }}</td>
                 <td>{{ $v->password }}</td>
-                <td>{{ $v->asal }}</td>
-                <td><button class="btn btn-info" onclick="edit({{ $v->id }})">Edit</button> <button class="btn btn-danger" onclick="hapus({{ $v->id }})">Hapus</button></td>
+                <td>{{ $v->role_id }}</td>
+                <td><button class="btn btn-info" onclick="edit({{ $v->id_user }})"><i class="fas fa-edit"></i></button> <button class="btn btn-danger" onclick="hapus({{ $v->id_user }})"><i class="fas fa-trash"></i></button></td>
             </tr>
             @endforeach
         @else

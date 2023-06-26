@@ -9,6 +9,6 @@ class Pendaftaran extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'namawebsite', 'image', 'url', 'token', 'status'
+        'namawebsite', 'image', 'url','token', 'file', 'status'
     ];
 }
